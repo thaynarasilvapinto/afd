@@ -21,7 +21,7 @@ def read_file(path):
 
 
 def main():
-    body = read_file("imput/imput.json")
+    body = read_file("input/afd1.json")
 
     automaton = convert_automaton(body)
     generete_pdf(automaton)

@@ -14,9 +14,9 @@ def convert_automaton(body):
 
 
 def read_file(path):
-    imput = open(path)
-    body = imput.read()
-    imput.close()
+    with open(path, 'r') as file:
+        body = file.read()
+    file.close()
     return json.loads(body)
 
 

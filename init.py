@@ -1,8 +1,8 @@
-from rule import Rule
-from automaton import Automaton
+from model.rule import Rule
+from model.automaton import Automaton
 import json
-from generete_automaton import generete_pdf
-from automaton_service import belongs_to_language
+from usecase.generete_automaton_use_case import generete_pdf
+from usecase.process_sequence_use_case import belongs_to_language
 
 
 def convert_automaton(body):
@@ -13,11 +13,15 @@ def convert_automaton(body):
     return automaton
 
 
-def main():
-    imput = open("imput.json")
+def read_file(path):
+    imput = open(path)
     body = imput.read()
     imput.close()
-    body = json.loads(body)
+    return json.loads(body)
+
+
+def main():
+    body = read_file("imput/imput.json")
 
     automaton = convert_automaton(body)
     generete_pdf(automaton)

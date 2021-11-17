@@ -1,5 +1,3 @@
-from rule import Rule
-
 covered_rules = []
 
 

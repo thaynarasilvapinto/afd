@@ -19,4 +19,3 @@ def generete_pdf(automato):
         f.edge(rule.source_state, rule.targets_state, rule.symbol)
 
     f.render()
-    print(f)

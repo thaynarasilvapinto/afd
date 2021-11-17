@@ -1,5 +1,4 @@
-from model.rule import Rule
-from model.automaton import Automaton
+from model.models import Automaton, Rule
 import json
 from usecase.generete_automaton_use_case import generete_pdf
 from usecase.process_sequence_use_case import belongs_to_language

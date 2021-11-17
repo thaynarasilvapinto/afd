@@ -19,7 +19,7 @@ def main(): #todo: fazer um front descente
         print(e.message)
 
 
-def read_file(path):
+def read_file(path): #todo: fazer validador
     with open(path, 'r') as file:
         body = file.read()
     file.close()

@@ -9,12 +9,11 @@ def generete_pdf(automato):
     for final_states in automato.final_states:
         f.node(final_states)
 
-    f.attr('node', shape='point')
-    f.node('qi')
+    f.attr('node', shape='plain')
+    f.node(' ')
 
     f.attr('node', shape='circle')
-    f.edge('qi', automato.initial_state)
-    # todo: melhorar estado inicial
+    f.edge(' ', automato.initial_state)
     for rule in automato.rules:  # todo: para transições que aceitem mais de um simbolo, ver como tratar
         f.edge(rule.source_state, rule.targets_state, rule.symbol)
 

@@ -4,10 +4,6 @@ from usecase.generete_automaton_use_case import generete_pdf
 from usecase.process_sequence_use_case import belongs_to_language
 
 
-if __name__ == '__main__':
-    main()
-
-
 def main():
     body = read_file("input/afd2.json")
 
@@ -32,3 +28,7 @@ def dto_automaton(body):
         rules.append(Rule(rule["estadoPartida"], rule["simbolo"], rule["estadosDestino"]))
     automaton = Automaton(body["estados"], list(body["alfabeto"]), rules, body["estadoInicial"], body["estadosFinais"])
     return automaton
+
+
+if __name__ == '__main__':
+    main()

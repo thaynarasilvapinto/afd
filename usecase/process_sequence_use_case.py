@@ -19,7 +19,7 @@ def applicable_rule(rules, current_state, current_symbol):
     for rule in rules:
         if is_rule_applicable(rule, current_state, current_symbol):
             return rule
-    return None
+    return None #todo: criar um tratamento de exceção
 
 
 def is_rule_applicable(rule, current_state, current_symbol):

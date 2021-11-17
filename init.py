@@ -4,7 +4,7 @@ from usecase.generete_automaton_use_case import generete_pdf
 from usecase.process_sequence_use_case import belongs_to_language
 
 
-def main():
+def main(): #todo: fazer um front descente
     body = read_file("input/afd2.json")
 
     automaton = dto_automaton(body)

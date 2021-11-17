@@ -1,3 +1,4 @@
+from config.exception_handler import AutomatonException
 covered_rules = []
 
 
@@ -19,7 +20,7 @@ def applicable_rule(rules, current_state, current_symbol):
     for rule in rules:
         if is_rule_applicable(rule, current_state, current_symbol):
             return rule
-    return None #todo: criar um tratamento de exceção
+    raise AutomatonException("Rule not found!")
 
 
 def is_rule_applicable(rule, current_state, current_symbol):

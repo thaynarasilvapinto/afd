@@ -2,6 +2,7 @@ from model.models import Automaton, Rule
 import json
 from usecase.generete_automaton_use_case import generete_pdf
 from usecase.process_sequence_use_case import belongs_to_language
+from config.exception_handler import AutomatonException
 
 
 def main(): #todo: fazer um front descente
@@ -10,9 +11,12 @@ def main(): #todo: fazer um front descente
     automaton = dto_automaton(body)
     generete_pdf(automaton)
 
-    while True:
-        sequence = input()
-        print(belongs_to_language(sequence, automaton))
+    try:
+        while True:
+            sequence = input()
+            print(belongs_to_language(sequence, automaton))
+    except AutomatonException as e:
+        print(e.message)
 
 
 def read_file(path):

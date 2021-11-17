@@ -26,7 +26,7 @@ def main():
     automaton = convert_automaton(body)
     generete_pdf(automaton)
 
-    while(True):
+    while True:
         sequence = input()
         print(belongs_to_language(sequence, automaton))
 

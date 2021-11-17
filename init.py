@@ -4,7 +4,7 @@ from usecase.generete_automaton_use_case import generete_pdf
 from usecase.process_sequence_use_case import belongs_to_language
 
 
-def convert_automaton(body):
+def dto_automaton(body):
     rules = []
     for rule in body["regras"]:
         rules.append(Rule(rule["estadoPartida"], rule["simbolo"], rule["estadosDestino"]))
@@ -22,7 +22,7 @@ def read_file(path):
 def main():
     body = read_file("input/afd2.json")
 
-    automaton = convert_automaton(body)
+    automaton = dto_automaton(body)
     generete_pdf(automaton)
 
     while True:
